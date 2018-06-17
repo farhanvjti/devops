@@ -1,9 +1,9 @@
 - name: Create an ec2 instance
   ec2:
     key_name: "{{ keypair }}"
-    aws_access_key: "AKIAPPPIXGOGJOYOUTLG3FA1"
-    aws_secret_key: "2TXb/nPQQQdsrfIuzaNOMIOb5vKn1ZLfah84vFCEJgv1"
-    group: default  # security group name
+    aws_access_key: "AKIAPPPIXGOGJOYOUTLG3FA1" #change this (1)
+    aws_secret_key: "2TXb/nPQQQdsrfIuzaNOMIOb5vKn1ZLfah84vFCEJgv1" #change this (2)
+    group: default  # security group name #change this (3)
     instance_type: "{{ instance_type}}"
     image: "{{ ami }}"
     wait: true
@@ -13,7 +13,7 @@
       Name: "Demo-tomcat-e2e-ansible"
     instance_tags:
       Name: "Demo"
-    vpc_subnet_id: "subnet-5fd59404"
+    vpc_subnet_id: "subnet-5fd59404" #change this (4)
     assign_public_ip: yes
   register: ec2
     
